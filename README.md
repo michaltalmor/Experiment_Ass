@@ -1,7 +1,7 @@
 # Experiment Assignment
 
 # INTRODUCTION
-This is a full-stack Project.
+This is a full-stack Project for experiments
 
 Developing of a node.js app and Vue.js
 
@@ -29,3 +29,10 @@ second part- Client-side: The client was developed in Vue.js framework, and incl
     ```
 
     Navigate to [http://localhost:8080](http://localhost:8080)
+
+
+
+
+When running backend - you can use the endpoints behind `localhost:5000/auth`.
+![Swagger Documentation](src/images/api.jpeg)
+
