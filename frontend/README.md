@@ -1,4 +1,4 @@
 # Frontend Side
 
 
-developed by: Michal Talmor
+Developed by: Michal Talmor
