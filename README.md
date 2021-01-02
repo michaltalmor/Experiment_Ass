@@ -34,5 +34,5 @@ second part- Client-side: The client was developed in Vue.js framework, and incl
 
 
 When running backend - you can use the endpoints behind `localhost:5000/auth`.
-![Swagger Documentation](src/images/api.jpeg)
+![Swagger Documentation](src/images/api.PNG)
 
