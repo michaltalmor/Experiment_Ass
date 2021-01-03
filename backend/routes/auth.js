@@ -5,15 +5,12 @@ const bcrypt = require("bcrypt");
 
 router.post("/Register", async (req, res, next) => {
   try {
-    // parameters exists
-    // valid parameters
-    // username exists
+
     const users = await DButils.selectUsernames();
 
     if (users.find((x) => x.email === req.body.email)) {
       throw { status: 409, message: "email taken" };
     }
-    // make new password
     await DButils.insertUserToUser(req.body.userID, req.body.firstName, req.body.email);
 
     res.status(201).send({ message: "user created", success: true });
@@ -25,12 +22,10 @@ router.post("/Register", async (req, res, next) => {
 router.post("/Login", async (req, res, next) => {
   try {
     // check that username exists
-    // const users = await DButils.execQuery("SELECT username FROM users");
     const users = await DButils.selectUsernames();
     if (!users.find((x) => x.email === req.body.email)) {
       throw { status: 401, message: `No email: '${req.body.email}' in the system` };
     }
-    // check that the password is correct
     const user = (await DButils.selectUserWithUsername(req.body.email))[0];
 
     res.status(200).send({ message: "login succeeded", success: true });

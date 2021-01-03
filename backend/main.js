@@ -22,16 +22,13 @@ app.options("*", cors(corsConfig));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-//print request logs
 app.use(morgan(":method :url :status  :response-time ms"));
-//setting cookies configuration
 app.use(
     session({
         cookieName: "session", //the cookie key name
         secret: process.env.COOKIE_SECRET,
         duration: 15 * 60 * 1000 * 60,
         activeDuration: 0, //if expireIn < activeDuration,
-        //the session will be extended by activeDuration milliseconds
     })
 
 );
